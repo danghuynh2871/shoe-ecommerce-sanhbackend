@@ -152,6 +152,14 @@ export default {
 <style scoped>
 .product-management {
   padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .search-bar {
@@ -163,11 +171,7 @@ export default {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 400px;
-}
-
-.actions {
-  margin-bottom: 20px;
+  width: 300px;
 }
 
 table {
@@ -178,29 +182,50 @@ table {
 }
 
 .product-img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 4px;
 }
 
 th, td {
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ddd;
   vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 th {
   background: #f8f9fa;
+  font-size: 14px;
+}
+
+td {
+  max-width: 150px;
+  font-size: 14px;
+}
+
+/* Specific width for quantity column */
+tr td:nth-child(5) {
+  width: 80px;
+}
+
+/* Specific width for action column */
+tr td:nth-child(8) {
+  width: 120px;
+  white-space: nowrap;
 }
 
 .btn {
   padding: 5px 10px;
-  margin: 0 5px;
+  margin: 0 2px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .btn.edit {
@@ -223,6 +248,7 @@ th {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .modal {
@@ -231,6 +257,7 @@ th {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 300px;
 }
 
 .modal-buttons {
@@ -249,6 +276,7 @@ th {
   margin-top: 20px;
   font-weight: bold;
   text-align: right;
+  padding-right: 10px;
 }
 
 .loading-container {
@@ -256,7 +284,7 @@ th {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 200px;
 }
 
 .loading-spinner {

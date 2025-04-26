@@ -254,34 +254,42 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background: #f9f9f9;
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
   transition: border-color 0.3s;
+  font-size: 14px;
 }
 
 input:focus,
 textarea:focus {
   border-color: #3498db;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 .product-img-preview {
@@ -290,11 +298,13 @@ textarea:focus {
   object-fit: cover;
   margin-top: 10px;
   border-radius: 4px;
+  border: 1px solid #eee;
 }
 
 .form-buttons {
   display: flex;
   gap: 10px;
+  margin-top: 25px;
 }
 
 .btn-primary {
@@ -307,6 +317,7 @@ textarea:focus {
   cursor: pointer;
   font-size: 16px;
   transition: background 0.3s;
+  font-weight: 500;
 }
 
 .btn-primary:hover {
@@ -314,7 +325,7 @@ textarea:focus {
 }
 
 .btn-delete {
-  padding: 12px;
+  padding: 12px 20px;
   background: #e74c3c;
   color: white;
   border: none;
@@ -330,7 +341,7 @@ textarea:focus {
 
 .loading-container {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .loading-spinner {
@@ -340,7 +351,7 @@ textarea:focus {
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
-  margin: 0 auto;
+  margin: 0 auto 15px;
 }
 
 @keyframes spin {
@@ -354,11 +365,12 @@ textarea:focus {
 
 .error-message {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   background: #ffdddd;
   border: 1px solid #ff9999;
   border-radius: 4px;
   margin-bottom: 20px;
+  color: #e74c3c;
 }
 
 .btn.retry {
@@ -370,5 +382,6 @@ textarea:focus {
   cursor: pointer;
   margin-top: 10px;
   width: auto;
+  display: inline-block;
 }
 </style>

@@ -213,6 +213,15 @@ export default {
 <style scoped>
 .order-management {
   padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .search-bar {
@@ -224,34 +233,86 @@ export default {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 400px;
+  width: 300px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  table-layout: fixed;
 }
 
-th,
-td {
-  padding: 15px;
+th, td {
+  padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ddd;
   vertical-align: middle;
+  word-wrap: break-word;
+  overflow: visible;
+}
+
+/* Column widths for better content display */
+tr th:nth-child(1), tr td:nth-child(1) {
+  width: 8%; /* Mã đơn hàng */
+}
+
+tr th:nth-child(2), tr td:nth-child(2) {
+  width: 18%; /* Thông tin sản phẩm */
+}
+
+tr th:nth-child(3), tr td:nth-child(3) {
+  width: 10%; /* Người đặt hàng */
+}
+
+tr th:nth-child(4), tr td:nth-child(4) {
+  width: 8%; /* Số điện thoại */
+}
+
+tr th:nth-child(5), tr td:nth-child(5) {
+  width: 15%; /* Địa chỉ */
+}
+
+tr th:nth-child(6), tr td:nth-child(6) {
+  width: 12%; /* Ngày đặt */
+}
+
+tr th:nth-child(7), tr td:nth-child(7) {
+  width: 10%; /* Tổng tiền */
+}
+
+tr th:nth-child(8), tr td:nth-child(8) {
+  width: 9%; /* Trạng thái */
+}
+
+tr th:nth-child(9), tr td:nth-child(9) {
+  width: 10%; /* Hành động */
 }
 
 th {
   background: #f8f9fa;
+  font-size: 14px;
+}
+
+td {
+  font-size: 14px;
+}
+
+/* Product info styling */
+td div div {
+  margin-bottom: 4px;
 }
 
 .btn {
   padding: 5px 10px;
-  margin: 0 5px;
+  margin: 0;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 13px;
+  display: inline-block;
+  width: 80px;
 }
 
 .view-btn {
@@ -265,25 +326,27 @@ th {
 }
 
 .total-orders {
-  margin-top: 20px;
+  margin-top: 15px;
   font-weight: bold;
   text-align: right;
+  padding-right: 10px;
 }
 
-.loading,
-.error {
+.loading, .error {
   text-align: center;
   padding: 20px;
 }
 
 .error {
-  color: red;
+  color: #e74c3c;
 }
 
 .status-badge {
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.9em;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
 }
 
 .processing {
@@ -318,7 +381,8 @@ th {
 .modal-content {
   background-color: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   min-width: 300px;
 }
 
@@ -329,6 +393,7 @@ th {
 .form-group label {
   display: block;
   margin-bottom: 5px;
+  font-weight: 500;
 }
 
 .form-group select {
