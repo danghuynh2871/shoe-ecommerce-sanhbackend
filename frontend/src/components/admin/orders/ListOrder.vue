@@ -419,4 +419,27 @@ td div div {
   background: #f44336;
   color: white;
 }
+.order-list {
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar {
+    text-align: center;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  table {
+    min-width: 800px;
+  }
+  
+  .status-badge {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+}
 </style>

@@ -109,7 +109,7 @@ h2{
 
 .admin-content {
   flex: 1;
-  padding: 20px;
+  padding: 20px 20px;
   background: #f5f6fa;
   margin-left: 300px;
   min-height: calc(100vh - 140px); /* Adjust for header and footer */
@@ -210,5 +210,39 @@ h2{
 
 .logout-btn:hover {
   background-color: #c0392b;
+}
+@media screen and (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+  }
+  
+  .admin-content {
+    margin-left: 0;
+  }
+  
+  .nav-menu {
+    padding: 10px;
+  }
+  
+  .nav-item {
+    padding: 10px 15px;
+  }
+  
+  .sub-menu {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .admin-container {
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    padding: 10px;
+  }
 }
 </style>

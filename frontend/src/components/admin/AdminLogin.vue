@@ -267,4 +267,40 @@ input:focus {
 .back-link:hover {
   color: #3498db;
 }
+@media screen and (max-width: 768px) {
+  .admin-login-form {
+    width: 90%;
+    padding: 20px;
+    margin: 15px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .admin-login-form {
+    padding: 15px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .login-btn {
+    width: 100%;
+  }
+}
 </style> 

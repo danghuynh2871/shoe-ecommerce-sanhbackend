@@ -55,15 +55,10 @@ body {
   margin: 0;
 }
 
-@media (max-width: 767.98px) {
+@media(max-width: 767px) {}
+@media(min-width: 768px) {}
+@media(min-width: 768px) and (max-width: 1023px) {}
 
-    body {
-
-        color: yellow;
-
-    }
-
-}
 
 /* chọn tất cả các element trong HTML */
   /* *{

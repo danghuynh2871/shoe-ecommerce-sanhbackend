@@ -355,4 +355,93 @@ th {
     transform: translateY(-20px);
   }
 }
+
+/* Common breakpoints */
+@media screen and (max-width: 1200px) {
+  .admin-container {
+    margin-left: 0;
+  }
+  
+  .admin-sidebar {
+    width: 250px;
+  }
+  
+  .admin-content {
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .admin-sidebar {
+    width: 200px;
+  }
+  
+  .admin-content {
+    margin-left: 200px;
+  }
+  
+  table th, table td {
+    padding: 8px 5px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+  }
+  
+  .admin-content {
+    margin-left: 0;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+  }
+  
+  .modal-content {
+    width: 90%;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .admin-container {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-buttons button {
+    width: 100%;
+  }
+  
+  .modal {
+    padding: 10px;
+  }
+}
 </style>
