@@ -55,6 +55,16 @@ body {
   margin: 0;
 }
 
+@media (max-width: 767.98px) {
+
+    body {
+
+        color: yellow;
+
+    }
+
+}
+
 /* chọn tất cả các element trong HTML */
   /* *{
     margin: 0;
