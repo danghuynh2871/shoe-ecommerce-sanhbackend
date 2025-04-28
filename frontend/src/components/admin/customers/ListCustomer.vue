@@ -156,19 +156,39 @@ export default {
     },
     async deleteCustomer() {
       try {
+        const adminToken = localStorage.getItem('adminToken');
+        if (!adminToken) {
+          this.error = "Bạn cần đăng nhập để thực hiện chức năng này";
+          return;
+        }
+
         await userService.deleteUser(this.customerIdToDelete);
+        
+        // Update local list after successful deletion
         this.customers = this.customers.filter(
           (customer) => customer._id !== this.customerIdToDelete
         );
+        
         this.closeModal();
         this.successMessage = "Xóa người dùng thành công!";
         setTimeout(() => {
           this.successMessage = null;
         }, 3000);
-        console.log("Xóa người dùng thành công:", this.customerIdToDelete);
       } catch (error) {
         console.error("Error deleting user:", error);
-        this.error = "Không thể xóa người dùng";
+        if (error.response && error.response.status === 401) {
+          this.error = "Phiên đăng nhập hết hạn, vui lòng đăng nhập lại";
+          this.isAuthenticated = false;
+          localStorage.removeItem("adminToken");
+          setTimeout(() => {
+            this.$router.push("/admin/login");
+          }, 2000);
+        } else {
+          this.error = "Không thể xóa người dùng: " + 
+            (error.response?.data?.message || "Có lỗi xảy ra");
+        }
+      } finally {
+        this.closeModal();
       }
     },
     closeModal() {
